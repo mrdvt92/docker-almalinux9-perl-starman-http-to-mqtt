@@ -29,7 +29,7 @@ $ sudo docker build --rm --tag=local/centos7-perl-starman-http-to-mqtt .
 # Docker Run Command
 
 ```
-$ sudo docker run --detach --name starman --publish 5000:80 local/centos7-perl-starman-http-to-mqtt
+$ sudo docker run --detach --name http_to_mqtt --publish 5000:80 local/centos7-perl-starman-http-to-mqtt
 ```
 
 * --detach - Detached mode: run the container in the background and print the new container ID. (run as -ti to see more information for debugging)
