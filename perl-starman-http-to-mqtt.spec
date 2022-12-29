@@ -12,6 +12,8 @@ Requires:	perl(JSON::XS)
 Requires:	perl(Starman)
 Requires:	perl(Plack::Middleware::Favicon_Simple)
 Requires:	perl(Plack::Middleware::Method_Allow)
+Requires:	systemd
+Requires:	firewalld
 
 %description
 Starman PSGI server which publishes HTTP GET URLs to MQTT
