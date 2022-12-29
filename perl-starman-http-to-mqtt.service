@@ -1,0 +1,12 @@
+[Unit]
+Description=Starman PSGI server which publishes HTTP GET URLs to MQTT
+ 
+[Service]
+Type=simple
+User=root
+Group=root
+ExecStart=/usr/bin/starman --workers 3 --port 81 /usr/share/perl-starman-http-to-mqtt/app.psgi
+Restart=always
+ 
+[Install]
+WantedBy=multi-user.target
