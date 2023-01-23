@@ -18,8 +18,11 @@ all:
 build:	Dockerfile app.psgi
 	docker build --rm --tag=$(IMAGE) .
 
+restart: build rm run
+	@echo -n
+
 run:
-	docker run --detach --env MQTT_HOST=$(MQTT_HOST) --name $(CONTAINER) --publish 5000:80 $(IMAGE)
+	docker run --detach --env MQTT_HOST=$(MQTT_HOST) --env DEBUG=1 --name $(CONTAINER) --publish 5000:80 $(IMAGE)
 
 rm:	
 	docker stop $(CONTAINER)
