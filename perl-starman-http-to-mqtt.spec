@@ -1,6 +1,6 @@
 Name:		perl-starman-http-to-mqtt
 Version:	0.01
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Perl Starman HTTP to MQTT Service
 Group:		System Environment/Daemons
 License:	MIT
