@@ -37,4 +37,4 @@ $ sudo docker run --detach --name http_to_mqtt --publish 5000:80 local/centos7-p
 
 # See Also
 
-  - HTTP to MQTT bridge - (Nodejs)[https://github.com/petkov/http_to_mqtt] - (Docker)[https://hub.docker.com/r/migoller/http-mqtt-bridge] - (Docker Source)[https://github.com/MiGoller/docker-http-mqtt-bridge]
+  - HTTP to MQTT bridge - [Nodejs](https://github.com/petkov/http_to_mqtt) - [Docker](https://hub.docker.com/r/migoller/http-mqtt-bridge) - [Docker Source](https://github.com/MiGoller/docker-http-mqtt-bridge)
