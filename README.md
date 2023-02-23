@@ -34,3 +34,7 @@ $ sudo docker run --detach --name http_to_mqtt --publish 5000:80 local/centos7-p
 
 * --detach - Detached mode: run the container in the background and print the new container ID. (run as -ti to see more information for debugging)
 * --publish - Publish a container's port, or range of ports, to the host - [host]:[container]
+
+# See Also
+
+  - HTTP to MQTT bridge - (Nodejs)[https://github.com/petkov/http_to_mqtt] - (Docker)[https://hub.docker.com/r/migoller/http-mqtt-bridge] - (Docker Source)[https://github.com/MiGoller/docker-http-mqtt-bridge]
