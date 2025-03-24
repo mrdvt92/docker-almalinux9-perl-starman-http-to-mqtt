@@ -4,8 +4,8 @@ Release:	2%{?dist}
 Summary:	Perl Starman HTTP to MQTT Service
 Group:		System Environment/Daemons
 License:	MIT
-URL:		https://github.com/mrdvt92/docker-centos7-perl-starman-http-to-mqtt
-Source0:	https://github.com/mrdvt92/docker-centos7-perl-starman-http-to-mqtt/perl-starman-http-to-mqtt-%{version}.tar.gz
+URL:		https://github.com/mrdvt92/docker-almalinux9-perl-starman-http-to-mqtt
+Source0:	https://github.com/mrdvt92/docker-almalinux9-perl-starman-http-to-mqtt/perl-starman-http-to-mqtt-%{version}.tar.gz
 Requires:	perl(Plack)
 Requires:	perl(Net::MQTT::Simple)
 Requires:	perl(JSON::XS)

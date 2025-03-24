@@ -1,12 +1,13 @@
-NAME=perl-starman-http-to-mqtt
-SPEC=$(NAME).spec
-VERSION = $(shell sed -e '/Version:/!d' -e 's/[^0-9.]*\([0-9.]*\).*/\1/' $(SPEC))
-DISTDIR = $(NAME)-$(VERSION)
-IMAGE=local/centos7-$(NAME)
-MQTT_HOST=mqtt.davisnetworks.com
-CONTAINER=http_to_mqtt
-SRCS=app.psgi perl-starman-http-to-mqtt.service
-AUX=$(SPEC) LICENSE
+NAME       := perl-starman-http-to-mqtt
+SPEC       := $(NAME).spec
+VERSION    := $(shell sed -e '/Version:/!d' -e 's/[^0-9.]*\([0-9.]*\).*/\1/' $(SPEC))
+DISTDIR    := $(NAME)-$(VERSION)
+IMAGE      := local/almalinux9-$(NAME)
+MQTT_HOST  := mqtt.davisnetworks.com
+MQTT_TOPIC := service/http-to-mqtt/request
+CONTAINER  := http_to_mqtt
+SRCS       := app.psgi perl-starman-http-to-mqtt.service
+AUX        := $(SPEC) LICENSE
 
 all:
 	@echo "Syntax:"
@@ -22,7 +23,7 @@ restart: build rm run
 	@echo -n
 
 run:
-	docker run --detach --env MQTT_HOST=$(MQTT_HOST) --env DEBUG=1 --name $(CONTAINER) --publish 5000:80 $(IMAGE)
+	docker run --detach --env MQTT_HOST=$(MQTT_HOST) --env MQTT_TOPIC=$(MQTT_TOPIC) --env DEBUG=1 --name $(CONTAINER) --publish 5000:80 $(IMAGE)
 
 rm:	
 	docker stop $(CONTAINER)
