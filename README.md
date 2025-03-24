@@ -1,14 +1,14 @@
 # Name
 
-docker-centos7-perl-starman-http-to-mqtt - Docker for Starman PSGI server which publishes HTTP GET URLs to MQTT
+docker-almalinux9-perl-starman-http-to-mqtt - Docker for Starman PSGI server which publishes HTTP GET URLs to MQTT
 
 # Docker Image
 
-This Docker image is built from the [Official CentOS 7 Docker Image](https://hub.docker.com/_/centos).
+This Docker image was built based on the [Almalinux Container image for Ansible Testing](https://github.com/bpadair32/docker-image-alma9-systemd)
 
 # Starman
 
-[Starman](https://metacpan.org/release/Starman) is a high-performance preforking [PSGI/Plack](https://metacpan.org/release/Plack) web server. We install it with `yum` from RPMs at [OpenFusion](http://repo.openfusion.net/centos7-x86_64/)
+[Starman](https://metacpan.org/release/Starman) is a high-performance preforking [PSGI/Plack](https://metacpan.org/release/Plack) web server. We install it with `yum` from RPMs at [DavisNetwokrs](https://linux.davisnetworks.com/el9/updates/)
 
 # PSGI App
 
@@ -21,7 +21,7 @@ Dependencies to run the PSGI app inside the container are installed in the Docke
 # Docker Build Command
 
 ```
-$ sudo docker build --rm --tag=local/centos7-perl-starman-http-to-mqtt .
+$ sudo docker build --rm --tag=local/almalinux9-perl-starman-http-to-mqtt .
 ```
 
 * --rm - Remove intermediate containers after a successful build.
@@ -29,7 +29,7 @@ $ sudo docker build --rm --tag=local/centos7-perl-starman-http-to-mqtt .
 # Docker Run Command
 
 ```
-$ sudo docker run --detach --name http_to_mqtt --publish 5000:80 local/centos7-perl-starman-http-to-mqtt
+$ sudo docker run --detach --name http_to_mqtt --publish 5000:80 local/almalinux9-perl-starman-http-to-mqtt
 ```
 
 * --detach - Detached mode: run the container in the background and print the new container ID. (run as -ti to see more information for debugging)
